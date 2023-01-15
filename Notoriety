@@ -1,0 +1,53 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Garfield", "DarkTheme")
+ 
+-- Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+ 
+ 
+MainSection:NewButton("Fling Npc", "Will Remove Npx kind of", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/2567-rblx/scripts/main/Notoriety/RemoveNPCs.lua",true))()
+end)
+ 
+MainSection:NewButton("Stamina Increase", "Increase your stamina", function()
+    local plr = game.Players.LocalPlayer.Name
+    local v = game:GetService("Workspace").Criminals[plr]
+    v.MaxStamina.Value = 10000
+end)
+ 
+MainSection:NewButton("Fill Stamina", "Fills Stamina", function()
+    local plr = game.Players.LocalPlayer.Name
+    local v = game:GetService("Workspace").Criminals[plr]
+    v.Stamina.Value = 10000
+end)
+ 
+ 
+--Misc
+local Misc = Window:NewTab("Misc")
+local MiscSection = Misc:NewSection("Misc")
+ 
+ 
+MiscSection:NewButton("Shadow Raid Farm", "Buggy a bit", function()
+    pcall(loadstring(game:HttpGet("https://gist.githubusercontent.com/Shag420/81729093f28d782a02ca295cf835a1ba/raw"))());
+end)
+ 
+MiscSection:NewButton("Tp bags to van", "Most maps work", function()
+    for i,v in pairs(game:GetService("Workspace").Bags:GetDescendants()) do
+        if v.Name == 'MoneyBag' then
+        v.CFrame = game:GetService("Workspace").BagSecuredArea.FloorPart.CFrame
+        end
+        end
+end)
+ 
+MiscSection:NewButton("Admin Bar", "Op", function()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/Sinscrips/roblox-scripts/main/Notoriety.lua', true))()
+end)
+ 
+MiscSection:NewButton("Gun Mods/Infinite Skill Points", "Basic Gui", function()
+    loadstring(game:GetObjects("rbxassetid://4763830754")[1].Source)()
+end)
+ 
+MiscSection:NewButton("GUI", "Gui", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Lucas559-noob/Roblox-Scripts/main/Notoriety",true))()
+end)
